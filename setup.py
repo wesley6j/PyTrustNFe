@@ -1,7 +1,7 @@
 # coding=utf-8
 from setuptools import setup, find_packages
 
-VERSION = "0.1.23"
+VERSION = "0.1.30"
 
 setup(
     name="PyTrustNFe",
@@ -20,8 +20,11 @@ later (LGPLv2+)',
         'Topic :: Software Development :: Libraries :: Python Modules',
     ],
     packages=find_packages(exclude=['*test*']),
-    package_data={'pytrustnfe': ['nfe/templates/*xml',
-                                 'nfse/paulistana/templates/*xml']},
+    package_data={'pytrustnfe': [
+        'nfe/templates/*xml',
+        'nfse/paulistana/templates/*xml',
+        'xml/schemas/*xsd',
+    ]},
     url='https://github.com/danimaribeiro/PyTrustNFe',
     license='LGPL-v2.1+',
     description='PyTrustNFe é uma biblioteca para envio de NF-e',
@@ -32,6 +35,7 @@ later (LGPLv2+)',
         'lxml >= 3.6.0, < 3.7',
         'suds >= 0.4',
         'suds_requests >= 0.3',
+        'reportlab'
     ],
     test_suite='nose.collector',
     tests_require=[
